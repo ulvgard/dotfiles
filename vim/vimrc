@@ -1,0 +1,33 @@
+syntax on
+set t_Co=256
+set cursorline
+set number
+
+" TAB/SPACE SETTINGS
+
+set ls=2            " allways show status line
+set tabstop=4       " numbers of spaces of tab character
+set shiftwidth=4    " numbers of spaces to (auto)indent
+
+set autoindent
+
+" KEY MAPS
+
+map <C-h> gT 		" goto left tab on C-h
+map <C-l> gt		" goto right tab on C-l
+
+map <C-j> 8j		" move 10 lines down
+map <C-k> 8k		" move 10 lines up
+
+nnoremap ss :w<cr>
+
+nmap <CR> o<ESC>k
+nnoremap <C-e> <End>	" bash-like goto end of line
+nnoremap <C-a> <Home>	" bash-like goto begining of line
+
+let g:molokai_original = 1
+let g:rehash256 = 1
+"set background=dark
+
+color molokai
+

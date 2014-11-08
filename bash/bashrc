@@ -1,0 +1,32 @@
+#
+# ~/.bashrc
+#
+# Based on w0ng: https://github.com/w0ng
+# Revised by Khufu
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+
+# prompt
+color_off='\e[0m' # Text Reset
+black='\e[0;30m' # Black
+red='\e[0;31m' # Red
+green='\e[0;32m' # Green
+yellow='\e[0;33m' # Yellow
+blue='\e[0;34m' # Blue
+purple='\e[0;35m' # Purple
+cyan='\e[0;36m' # Cyan
+white='\e[0;37m' # White
+PS1="\[${green}\]\u\[${green}\]@\[${green}\]\h \[${blue}\]\w\[${blue}\]>\[${green}\] \[${color_off}\]"
+
+# colouring core utils
+export GREP_COLOR="auto"
+export LESS="-R"
+alias ls='ls -hF --color=auto'
+alias feh='feh -Z -F'
+alias bc='bc -l'
+alias gdb='gdb -q'
+alias rsync='rsync --progress'
+
+export EDITOR="vim"
