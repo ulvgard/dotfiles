@@ -20,7 +20,7 @@ function configure_vim() {
 	cp vim/vimrc $HOME/.vimrc
 	echo "* Configuring vim color molokai"
 	mkdir -p $HOME/.vim/colors/
-	cp vim/molokai/colors/molokai.vim $HOME/.vim/colors/ 
+	cp vim/colors/molokai.vim $HOME/.vim/colors/ 
 }
 
 function configure_bash() {
