@@ -2,9 +2,12 @@
 PKG_MGR_CMD="sudo pacman -S "
 
 function configure_bspwm() {
-	echo "* Configuring bspwm and sxhkd"
+
+	echo "* Configuring bspwm"
 	mkdir -p $HOME/.config/bspwm
 	cp wm/bspwm/bspwmrc $HOME/.config/bspwm/
+
+	echo "* Configuring sxhkd"
 	mkdir -p $HOME/.config/sxhkd/
 	cp wm/bspwm/sxhkdrc $HOME/.config/sxhkd/
 	chmod +x $HOME/.config/sxhkd/sxhkdrc
