@@ -14,9 +14,9 @@ function configure_bspwm() {
 }
 
 function configure_xorg() {
-	echo "* Configuring xinitrc and Xdefaults"
+	echo "* Configuring xinitrc and Xresources"
 	cp xorg/xinitrc $HOME/.xinitrc
-	cp xorg/Xdefaults $HOME/.Xdefaults
+	cp xorg/Xresources $HOME/.Xresources
 }
 function configure_vim() {
 	echo "* Configuring vimrc"
