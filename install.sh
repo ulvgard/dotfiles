@@ -11,24 +11,33 @@ function configure_bspwm() {
 	mkdir -p $HOME/.config/sxhkd/
 	cp wm/bspwm/sxhkdrc $HOME/.config/sxhkd/
 	chmod +x $HOME/.config/sxhkd/sxhkdrc
+
 }
 
 function configure_xorg() {
 	echo "* Configuring xinitrc and Xresources"
 	cp xorg/xinitrc $HOME/.xinitrc
 	cp xorg/Xresources $HOME/.Xresources
+
+	echo "* Configuring Xdefaults (urxvt config-file)"
+	cp xorg/Xdefaults $HOME/.Xdefaults
 }
+
 function configure_vim() {
+
 	echo "* Configuring vimrc"
 	cp vim/vimrc $HOME/.vimrc
 	echo "* Configuring vim color molokai"
 	mkdir -p $HOME/.vim/colors/
 	cp vim/colors/molokai.vim $HOME/.vim/colors/ 
+
 }
 
 function configure_bash() {
+
 	echo "* Configuring bashrc"
 	cp bash/bashrc $HOME/.bashrc
+
 }
 
 function install_folders() {
