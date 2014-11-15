@@ -7,15 +7,18 @@ bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config focus_by_distance   true
 
-if xrandr | grep -q "HDMI1 connected"
+if xrandr | grep -q "DP1 connected"
 then
-	bspc monitor HDMI1 -n 0 -d 1 2 3 4 5 6 7 8 9 
+	bspc monitor DP1 -a 1 2 3 4 5 6 7 8 9 
+	if xrandr | grep -q "VGA1 connected"
+	then
+		bspc monitor VGA1 -a 1
+	fi
 else 
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 
 fi
 
 bspc rule -a firefox floating=on
 
-$HOME/.config/bspwm/panel/panel &
-$HOME/src/toolbox/fehbg
+$HOME/src/dotfiles/feh/fehbg.sh $HOME/Dropbox/Wallpapers/wallhaven-73452.jpg
 $HOME/src/toolbox/trayer.sh
