@@ -72,3 +72,7 @@ super + w
 # make sxhkd reload its configuration files:
 alt + r 
 	pkill -USR1 -x sxhkd
+
+# mute/unmute alsa
+super + m
+	amixer set Master toggle
