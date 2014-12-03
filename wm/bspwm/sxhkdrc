@@ -68,6 +68,8 @@ alt + d
 	env PATH=/home/tobias/bin/:$PATH dmenu_run -p 'Run:' -l 10 -nb '#222222' -nf '#FF0066' -fn 'snap' -sb '#222222' -sf '#85A3C2'
 super + w
 	firefox
+super + l
+	if setxkbmap -query | grep se; then setxkbmap us; else setxkbmap se; fi
 
 # make sxhkd reload its configuration files:
 alt + r 
