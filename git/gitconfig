@@ -1,0 +1,11 @@
+[user]
+	name = Tobias Skoglund
+	email = inbox.tskoglund@gmail.com
+[push]
+	default = matching
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[alias] 
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit

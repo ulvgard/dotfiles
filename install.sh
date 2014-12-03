@@ -1,8 +1,11 @@
 #!/bin/bash
 PKG_MGR_CMD="sudo pacman -S "
 
+function configure_bash() {
+	echo "* Configuring bashrc"
+	cp bash/bashrc $HOME/.bashrc
+}
 function configure_bspwm() {
-
 	echo "* Configuring bspwm"
 	mkdir -p $HOME/.config/bspwm
 	cp wm/bspwm/bspwmrc $HOME/.config/bspwm/
@@ -11,9 +14,23 @@ function configure_bspwm() {
 	mkdir -p $HOME/.config/sxhkd/
 	cp wm/bspwm/sxhkdrc $HOME/.config/sxhkd/
 	chmod +x $HOME/.config/sxhkd/sxhkdrc
-
 }
-
+function configure_dunst {
+	echo "* Configuring dunst"
+	mkdir -p $HOME/.config/dunst/
+	cp dunst/dunstrc $HOME/.config/dunst/dunstrc
+}
+function configure_git() {
+	echo "* Configuring git"
+	cp git/gitconfig $HOME/.gitconfig 
+}
+function configure_vim() {
+	echo "* Configuring vimrc"
+	cp vim/vimrc $HOME/.vimrc
+	echo "* Configuring vim color molokai"
+	mkdir -p $HOME/.vim/colors/
+	cp vim/colors/molokai.vim $HOME/.vim/colors/ 
+}
 function configure_xorg() {
 	echo "* Configuring xinitrc and Xresources"
 	cp xorg/xinitrc $HOME/.xinitrc
@@ -23,22 +40,9 @@ function configure_xorg() {
 	cp xorg/Xdefaults $HOME/.Xdefaults
 }
 
-function configure_vim() {
 
-	echo "* Configuring vimrc"
-	cp vim/vimrc $HOME/.vimrc
-	echo "* Configuring vim color molokai"
-	mkdir -p $HOME/.vim/colors/
-	cp vim/colors/molokai.vim $HOME/.vim/colors/ 
 
-}
 
-function configure_bash() {
-
-	echo "* Configuring bashrc"
-	cp bash/bashrc $HOME/.bashrc
-
-}
 
 function install_folders() {
 	echo "* Creating folders archive/ src/ projects/ sandbox/" 
@@ -51,22 +55,28 @@ function install_folders() {
 
 for thing in $@; do
 	case "$thing" in
-		"vim") 
-		configure_vim
-		;;
 		"bash") 
 		configure_bash
-		;;
-		"xorg") 
-		configure_xorg
 		;;
 		"bspwm")
 		configure_bspwm
 		;;
+		"dunst")
+		configure_dunst
+		;;
 		"folders")
 		install_folders
 		;;
-		*) 
+		"git")
+		configure_git
+		;;
+		"vim") 
+		configure_vim
+		;;
+		"xorg") 
+		configure_xorg
+		;;
+		"all") 
 		configure_xorg
 		configure_bspwm
 		configure_vim
