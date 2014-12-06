@@ -43,7 +43,11 @@ function configure_xorg() {
 
 
 
-
+function install_bspwm() {
+	echo "* Installing bspwm and sxhkd"
+	./wm/bspwm/install_bspwm.sh
+	configure_bspwm
+}
 function install_folders() {
 	echo "* Creating folders archive/ src/ projects/ sandbox/" 
 	mkdir -p $HOME/archive/
@@ -59,7 +63,13 @@ for thing in $@; do
 		configure_bash
 		;;
 		"bspwm")
-		configure_bspwm
+		read -p "Do you want to download and install bspwm & sxhkd? (y/N) " -n 1 -r; echo
+		if [[ $REPLY =~ ^[Yy]$ ]]
+		then
+			install_bspwm
+		else
+			configure_bspwm
+		fi
 		;;
 		"dunst")
 		configure_dunst
