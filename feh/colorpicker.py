@@ -70,11 +70,17 @@ def kmeans(points, k, min_diff):
 			break
 	return clusters
 
+def to_value(color):
+	color = color[1:]
+	return int(color[:1],16)+int(color[2:3],16)+int(color[3:],16)
+
+
 if __name__ == "__main__":
 	fname = sys.argv[1]
 	clusters = colorz(fname)
-	print "focused_border_color \""+clusters[0]+"\""
-	print "active_border_color \""+clusters[1]+"\""
-	print "normal_border_color \""+clusters[2]+"\""
+	clusters = sorted(clusters, key=to_value)
+	print "bspc config focused_border_color \""+clusters[0]+"\""
+	print "bspc config active_border_color \""+clusters[1]+"\""
+	print "bspc config normal_border_color \""+clusters[2]+"\""
 
 

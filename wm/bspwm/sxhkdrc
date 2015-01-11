@@ -14,6 +14,9 @@ alt + {u,i,o,p}
 alt + shift + c
 	bspc window -c
 
+alt + space
+	bspc desktop -R -90
+
 # balance desktop
 alt + b
 	bspc desktop -B
