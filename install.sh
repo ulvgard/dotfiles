@@ -37,7 +37,7 @@ function configure_xorg() {
 	cp xorg/Xresources $HOME/.Xresources
 
 	echo "* Configuring Xdefaults (urxvt config-file)"
-	cp xorg/Xdefaults $HOME/.Xdefaults
+	cp xorg/Xdefaults-urxvt $HOME/.Xdefaults
 }
 
 
