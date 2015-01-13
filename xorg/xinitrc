@@ -4,19 +4,7 @@ xset fp rehash
 setxkbmap -layout "us,se" -option "grp: caps_toggle"
 setxkbmap -device 14 -layout "us,se" -option "grp: caps_toggle"
 
-#exec herbstluftwm
-if xrandr | grep -q "DP1 connected"
-then
+$HOME/.config/monitor_setup.sh
 
-	xrandr --output LVDS1 --off
-
-	if xrandr | grep -q "VGA1 connected"
-	then
-		xrandr --output VGA1 --auto --left-of DP1
-		xrandr --output DP1 --primary --auto
-	else
-		xrandr --output DP1 --auto
-	fi
-fi
 sxhkd &
 exec bspwm
