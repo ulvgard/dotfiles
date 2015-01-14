@@ -11,7 +11,7 @@ hc emit_hook reload
 # remove all existing keybindings
 hc keyunbind --all
 
-/home/tobias/src/toolbox/fehbg
+$HOME/src/dotfiles/feh/fehbg.sh $HOME/Dropbox/wallpapers/wallhaven-21827.jpg
 
 # keybindings
 Mod=Mod1
@@ -87,25 +87,18 @@ hc keybind $Mod-Shift-k shift up
 hc keybind $Mod-Shift-l shift right
 
 # colors
-hc set frame_border_active_color '#333333'
-hc set frame_border_normal_color '#222222'
-#hc set frame_bg_normal_color '#b9b9b9'
-#hc set frame_bg_normal_color '#f9f9f9'
 hc set frame_border_width 0
-hc set window_border_width 2
+hc set window_border_width 1
 hc set window_border_inner_width 0
-hc set window_border_normal_color '#113355'
-#hc set window_border_normal_color '#111111'
-hc set window_border_active_color '#336699'
-
-# orange FF7F00
+hc set window_border_normal_color '#22394f'
+hc set window_border_active_color '#54717d'
 
 hc set always_show_frame 1
-hc set frame_gap 10
+hc set frame_gap 3
 hc set frame_bg_transparent 1
 # add overlapping window borders
-hc set window_gap -2
-hc set frame_padding 2
+hc set window_gap 1
+hc set frame_padding 0
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
@@ -138,7 +131,7 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
     # start it on each monitor
     $panel $monitor &
 done
-$HOME/src/toolbox/fehbg
+
 $HOME/src/toolbox/trayer.sh
 
 
