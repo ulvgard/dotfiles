@@ -23,7 +23,7 @@ PS1="\[${green}\]\u\[${green}\]@\[${green}\]\h \[${blue}\]\w\[${blue}\]>\[${gree
 
 # colouring core utils
 export LESS="-R"
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -n'
 alias ls='ls -hF --color=auto'
 alias feh='feh -Z -F'
 alias bc='bc -l'
