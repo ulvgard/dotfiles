@@ -24,6 +24,11 @@ function configure_git() {
 	echo "* Configuring git"
 	cp git/gitconfig $HOME/.gitconfig 
 }
+function configure_herbstluftwm() {
+	echo "* Configuring Herbstluftwm"
+	mkdir -p $HOME/.config/herbstluftwm/
+	cp wm/herbstluftwm/* $HOME/.config/herbstluftwm/
+}
 function configure_vim() {
 	echo "* Configuring vimrc"
 	cp vim/vimrc $HOME/.vimrc
@@ -79,6 +84,9 @@ for thing in $@; do
 		;;
 		"git")
 		configure_git
+		;;
+		"herbstluftwm")
+		configure_herbstluftwm
 		;;
 		"vim") 
 		configure_vim
