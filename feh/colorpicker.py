@@ -79,8 +79,12 @@ if __name__ == "__main__":
 	fname = sys.argv[1]
 	clusters = colorz(fname)
 	clusters = sorted(clusters, key=to_value)
+	
+	print "hc set window_border_active_color \""+clusters[0]+"\""
+	print "hc set window_border_normal_color \""+clusters[1]+"\""
+	"""
 	print "bspc config focused_border_color \""+clusters[0]+"\""
 	print "bspc config active_border_color \""+clusters[1]+"\""
 	print "bspc config normal_border_color \""+clusters[2]+"\""
-
+	"""
 
