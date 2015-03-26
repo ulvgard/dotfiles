@@ -29,6 +29,7 @@ alias feh='feh -Z -F'
 alias bc='bc -l'
 alias gdb='gdb -q'
 alias rsync='rsync --progress'
+alias watch='watch -c'
 
 
 export EDITOR="vim"
