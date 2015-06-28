@@ -90,7 +90,7 @@ function _checkIfInstalled
 	fi
 }
 
-function showInfo
+function showConfigStatus 
 {
 	echo -e "bash\t\t"$(_checkIfInstalled bash)"\t"$(isBashConfigured)
 	echo -e "dunst\t\t"$(_checkIfInstalled dunst)"\t"$(isDunstConfigured)
