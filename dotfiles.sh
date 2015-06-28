@@ -45,7 +45,7 @@ function isXorgConfigured
 function _checkIfInstalled
 {
 	pacman -Qi $1 > /dev/null;
-	if [ ! $? > 0 ]; then
+	if [  $? -eq 0 ]; then
 		echo "[installed]"
 	else
 		echo "[uninstalled]"
@@ -54,6 +54,6 @@ function _checkIfInstalled
 
 function showInfo
 {
-	echo "herbstluftwm "$(_checkIfInstalled herbstluftwm)" "$(isHLWMConfigured)
-	echo "Xorg "$(_checkIfInstalled xorg-server)" "$(isXorgConfigured)
+	echo -e "herbstluftwm\t"$(_checkIfInstalled herbstluftwm)"\t"$(isHLWMConfigured)
+	echo -e "Xorg\t\t"$(_checkIfInstalled xorg-server)"\t"$(isXorgConfigured)
 }
