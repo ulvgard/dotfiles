@@ -68,6 +68,15 @@ function isVimConfigured
 		echo "\n  -> ~/.vimrc"
 	fi
 }
+function isGitConfigured
+{
+	if [[ $(_fileExistAndEqualTo ~/.gitconfig ./git/gitconfig) -eq 0 ]]; then
+		printConfigured
+	else
+		printNotConfigured	
+		echo "\n  -> ~/.gitconfig"
+	fi
+}
 function isXorgConfigured
 {
 	if  [[ $(_fileExistAndEqualTo ~/.xinitrc ./xorg/xinitrc) -eq 0 ]] && \
@@ -95,7 +104,12 @@ function showConfigStatus
 	echo -e "bash\t\t"$(_checkIfInstalled bash)"\t"$(isBashConfigured)
 	echo -e "dunst\t\t"$(_checkIfInstalled dunst)"\t"$(isDunstConfigured)
 	echo -e "herbstluftwm\t"$(_checkIfInstalled herbstluftwm)"\t"$(isHLWMConfigured)
+	echo -e "Git\t\t"$(_checkIfInstalled git)"\t"$(isGitConfigured)
 	echo -e "Vim\t\t"$(_checkIfInstalled vim-runtime)"\t"$(isVimConfigured)
 	echo -e "Xorg\t\t"$(_checkIfInstalled xorg-server)"\t"$(isXorgConfigured)
 
 }
+
+echo "Usage:"
+echo "================================="
+echo "List installed and configured packages: showConfigStatus"
