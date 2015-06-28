@@ -5,16 +5,6 @@ function configure_bash() {
 	echo "* Configuring bashrc"
 	cp bash/bashrc $HOME/.bashrc
 }
-function configure_bspwm() {
-	echo "* Configuring bspwm"
-	mkdir -p $HOME/.config/bspwm
-	cp wm/bspwm/bspwmrc $HOME/.config/bspwm/
-
-	echo "* Configuring sxhkd"
-	mkdir -p $HOME/.config/sxhkd/
-	cp wm/bspwm/sxhkdrc $HOME/.config/sxhkd/
-	chmod +x $HOME/.config/sxhkd/sxhkdrc
-}
 function configure_dunst {
 	echo "* Configuring dunst"
 	mkdir -p $HOME/.config/dunst/
@@ -48,11 +38,6 @@ function configure_xorg() {
 
 
 
-function install_bspwm() {
-	echo "* Installing bspwm and sxhkd"
-	./wm/bspwm/install_bspwm.sh
-	configure_bspwm
-}
 function install_folders() {
 	echo "* Creating folders archive/ src/ projects/ sandbox/" 
 	mkdir -p $HOME/archive/
@@ -66,15 +51,6 @@ for thing in $@; do
 	case "$thing" in
 		"bash") 
 		configure_bash
-		;;
-		"bspwm")
-		read -p "Do you want to download and install bspwm & sxhkd? (y/N) " -n 1 -r; echo
-		if [[ $REPLY =~ ^[Yy]$ ]]
-		then
-			install_bspwm
-		else
-			configure_bspwm
-		fi
 		;;
 		"dunst")
 		configure_dunst
@@ -96,7 +72,6 @@ for thing in $@; do
 		;;
 		"all") 
 		configure_xorg
-		configure_bspwm
 		configure_vim
 		install_folders
 		;;
