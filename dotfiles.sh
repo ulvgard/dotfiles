@@ -99,3 +99,7 @@ function showConfigStatus
 	echo -e "Xorg\t\t"$(_checkIfInstalled xorg-server)"\t"$(isXorgConfigured)
 
 }
+
+echo "Usage:"
+echo "---------------------------------"
+echo "showConfigStatus - print a list of installed and configured packages"
