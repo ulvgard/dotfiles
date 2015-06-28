@@ -31,5 +31,14 @@ alias gdb='gdb -q'
 alias rsync='rsync --progress'
 alias watch='watch -c'
 
+function switchMuteUnmute {
+	amixer set Master toggle &> /dev/null
+	if [[ $(amixer get Master | grep '\[on\'] | wc -l) -gt 0 ]]; then
+		notify-send Alsamixer "Master: Unmute"
+	else
+		notify-send Alsamixer "Master: Mute"
+	fi
+}
+
 
 export EDITOR="vim"
