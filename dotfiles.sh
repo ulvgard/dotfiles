@@ -32,7 +32,7 @@ function _fileExistAndEqualTo
 }
 function isBashConfigured
 {
-	if [[ $(_fileExistAndEqualTo "~/.bashrc" "./bash/bashrc") -eq 0 ]]; then
+	if [[ $(_fileExistAndEqualTo ~/.bashrc ./bash/bashrc) -eq 0 ]]; then
 		printConfigured
 	else
 		printNotConfigured	
@@ -41,7 +41,7 @@ function isBashConfigured
 }
 function isDunstConfigured
 {
-	if [[ $(_fileExistAndEqualTo "~/.config/dunst/dunstrc" "./dunst/dunstrc") -eq 0 ]]; then
+	if [[ $(_fileExistAndEqualTo ~/.config/dunst/dunstrc ./dunst/dunstrc) -eq 0 ]]; then
 		printConfigured
 	else
 		printNotConfigured	
@@ -61,7 +61,7 @@ function isHLWMConfigured
 }
 function isVimConfigured
 {
-	if [[ $(_fileExistAndEqualTo "~/.vimrc" "./vim/vimrc") -eq 0 ]]; then
+	if [[ $(_fileExistAndEqualTo ~/.vimrc ./vim/vimrc) -eq 0 ]]; then
 		printConfigured
 	else
 		printNotConfigured	
