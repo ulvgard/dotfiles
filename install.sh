@@ -34,6 +34,7 @@ function configure_herbstluftwm() {
 	if [[ ! $? -eq 0 ]]; then
 		echo "* Installing herbstluftwm"
 		sudo pacman -Syy herbstluftwm 
+		sudo pacman -Syy artwiz-fonts 
 	fi
 	echo "* Configuring Herbstluftwm"
 	mkdir -p $HOME/.config/herbstluftwm/
