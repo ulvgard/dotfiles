@@ -2,9 +2,13 @@
 function _fileExistAndEqualTo
 {
 	if [ -f $1 ]; then
-		diff $1 $2 | wc -l | echo -
+		if [ diff $1 $2 | wc -l - -gt 0 ] ; then
+			echo 1;
+		else
+			echo 0;
+		fi
 	else
-		echo "1"
+		echo 1;
 	fi
 }
 function isBashConfigured
@@ -17,6 +21,12 @@ function isDunstConfigured
 }
 function isHLWMConfigured
 {
+	if [[ $(_fileExistAndEqualTo "~/.config/herbstluftwm/autostart" "./wm/herbstluftwm/autostart") -eq 0 ]] && \
+	   [[ $(_fileExistAndEqualTo "~/.config/herbstlufwm/panel.sh" "./wm/herbstluftwm/panel.sh") -eq 0 ]]; then
+		echo "[configured]"
+	else
+		echo "[not configured]"
+	fi
 }
 function isVimConfigured
 {
@@ -24,6 +34,26 @@ function isVimConfigured
 }
 function isXorgConfigured
 {
-	#echo $(_fileExistAndEqualTo "~/.xinitrc" "./xorg/xinitrc")
-	#echo $(_fileExistAndEqualTo "~/.Xresources" "./xorg/Xresources")
+	if  [[ $(_fileExistAndEqualTo "~/.xinitrc" "./xorg/xinitrc") -eq 0 ]] && \
+		[[ $(_fileExistAndEqualTo "~/.Xresources" "./xorg/Xresources") -eq 0 ]]; then
+		echo "[configured]"
+	else
+		echo "[not configured]"
+	fi
+}
+
+function _checkIfInstalled
+{
+	pacman -Qi $1 > /dev/null;
+	if [ ! $? > 0 ]; then
+		echo "[installed]"
+	else
+		echo "[uninstalled]"
+	fi
+}
+
+function showInfo
+{
+	echo "herbstluftwm "$(_checkIfInstalled herbstluftwm)" "$(isHLWMConfigured)
+	echo "Xorg "$(_checkIfInstalled xorg-server)" "$(isXorgConfigured)
 }
