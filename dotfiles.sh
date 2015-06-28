@@ -36,6 +36,7 @@ function isBashConfigured
 		printConfigured
 	else
 		printNotConfigured	
+		echo "\n  -> ~/.bashrc"
 	fi
 }
 function isDunstConfigured
@@ -44,6 +45,7 @@ function isDunstConfigured
 		printConfigured
 	else
 		printNotConfigured	
+		echo "\n  -> ~/.config/dunst/dunstrc"
 	fi
 }
 function isHLWMConfigured
@@ -53,6 +55,8 @@ function isHLWMConfigured
 		printConfigured
 	else
 		printNotConfigured	
+		echo "\n  -> ~/.config/herbstluftwm/autostart"
+		echo "\n  -> ~/.config/herbstluftwm/panel.sh"
 	fi
 }
 function isVimConfigured
@@ -61,6 +65,7 @@ function isVimConfigured
 		printConfigured
 	else
 		printNotConfigured	
+		echo "\n  -> ~/.vimrc"
 	fi
 }
 function isXorgConfigured
@@ -70,6 +75,8 @@ function isXorgConfigured
 		printConfigured
 	else
 		printNotConfigured	
+		echo "\n  -> ~/.xinitrc"
+		echo "\n  -> ~/.Xresources"
 	fi
 }
 
