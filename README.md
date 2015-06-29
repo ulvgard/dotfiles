@@ -11,3 +11,19 @@ Example:
 ```
 $> . dotfiles.sh
 $> showConfigStatus
+bash        [installed] [not configured]
+    -> ~/.bashrc
+dunst      [installed] [not configured]
+    -> ~/.config/dunst/dunstrc
+herbstluftwm  [installed] [not configured]
+    -> ~/.config/herbstluftwm/autostart 
+    -> ~/.config/herbstluftwm/panel.sh
+Git     [installed] [not configured]
+    -> ~/.gitconfig
+Vim        [installed] [not configured]
+    -> ~/.vimrc
+Xorg      [installed] [not configured]
+    -> ~/.xinitrc 
+    -> ~/.Xresources
+```
+
