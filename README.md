@@ -27,3 +27,8 @@ Xorg      [installed] [not configured]
     -> ~/.Xresources
 ```
 
+You can use `install.sh` to install a (archlinux) package and configuration.
+
+```
+$> ./install.sh bash
+```
