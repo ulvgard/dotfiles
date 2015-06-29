@@ -31,4 +31,6 @@ You can use `install.sh` to install a (archlinux) package and configuration.
 
 ```
 $> ./install.sh bash
+* Installing bash 
+* Configuring bashrc
 ```
