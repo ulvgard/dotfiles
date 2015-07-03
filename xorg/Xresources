@@ -23,7 +23,6 @@ URxvt.colorIT:      #87af5f
 URxvt.colorBD:      #d7d7d7
 URxvt.colorUL:      #87afd7
 
-
 ! Colors ---------------------------------
 ! Black
 URxvt*color0 : #000000
@@ -38,7 +37,7 @@ URxvt*color10: #00ff00
 URxvt*color3 : #eeb211
 URxvt*color11: #ffba00
 ! Blue
-URxvt*color4 : #005ef7
+URxvt*color4 : #126EFF
 URxvt*color12: #4a8cf7
 ! Magenta
 URxvt*color5 : #7f39aa
