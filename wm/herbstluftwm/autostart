@@ -11,8 +11,9 @@ hc emit_hook reload
 # remove all existing keybindings
 hc keyunbind --all
 
-#$HOME/src/dotfiles/feh/fehbg.sh $HOME/Dropbox/wallpapers/wallhaven-21827.jpg
-feh --bg-scale /home/tobias/Dropbox/wallpapers/wallhaven-498.jpg
+#feh --bg-scale Dropbox/wallpapers/wallhaven-134311.jpg
+#feh --bg-scale Dropbox/wallpapers/wallhaven-169381.jpg
+
 
 
 if xrandr | grep -q "DP1-1 connected" 
@@ -33,7 +34,9 @@ hc keybind $Mod-Return spawn urxvt
 hc keybind $Mod-d spawn env PATH=/home/tobias/bin/:$PATH dmenu_run -p 'Run:' -l 10 -nb '#222222' -nf '#FF0066' -fn 'snap' -sb '#222222' -sf '#85A3C2'
 hc keybind $Super+w spawn firefox
 hc keybind $Super+s spawn python2 $HOME/projects/soundrecog/recon.py
-hc keybind $Super-Shift-l spawn i3lock -c 000000
+hc keybind $Super-Shift-l spawn i3lock -c 000000 -i /home/tobias/Dropbox/Dirac/DiracLogoOld.png
+hc keybind $Super-m spawn amixer set Master toggle && notify-dark "Mute/Unmute"
+
 
 
 # tags
@@ -97,19 +100,17 @@ hc keybind $Mod-Shift-l shift right
 hc set frame_border_width 0
 hc set window_border_width 1
 hc set window_border_inner_width 0
-#hc set window_border_normal_color '#22394f'
-#hc set window_border_active_color '#54717d'
 
-hc set window_border_active_color "#cfb2c9"
-hc set window_border_normal_color "#11132f"
+hc set window_border_active_color "#bf7563"
+hc set window_border_normal_color "#4c4955"
 
 hc set always_show_frame 1
-hc set frame_gap 3
+hc set frame_gap 1
 hc set frame_bg_transparent 1
 # add overlapping window borders
-hc set window_gap 2
+hc set window_gap 6
 hc set frame_padding 0
-hc set smart_window_surroundings 0
+hc set smart_window_surroundings 1
 hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 
@@ -144,6 +145,6 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
     $panel $monitor &
 done
 
-$HOME/src/toolbox/trayer.sh
+trayer --edge top --align right --widthtype request --heighttype pixels --height 10 --transparent true --alpha 128 --margin -100 &
 
-
+/usr/bin/dropboxd
