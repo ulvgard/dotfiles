@@ -11,11 +11,6 @@ hc emit_hook reload
 # remove all existing keybindings
 hc keyunbind --all
 
-#feh --bg-scale Dropbox/wallpapers/wallhaven-134311.jpg
-#feh --bg-scale Dropbox/wallpapers/wallhaven-169381.jpg
-
-
-
 if xrandr | grep -q "DP1-1 connected" 
 then
 	hc set_monitors 1920x1200+0+0 1920x1200+1920+0
@@ -113,6 +108,7 @@ hc set frame_padding 0
 hc set smart_window_surroundings 1
 hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
+hc set focus_follows_mouse 1
 
 # set verical as default
 hc set default_frame_layout 0
@@ -136,6 +132,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
 # hc detect_monitors
+$HOME/.config/monitor_setup.sh
 
 # find the panel
 panel="/home/tobias/.config/herbstluftwm/panel.sh"
