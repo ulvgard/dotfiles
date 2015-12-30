@@ -26,7 +26,9 @@ hc keybind $Mod-Shift-c close
 Super=Mod4
 hc keybind $Mod-Shift-Return spawn urxvt -e fish
 hc keybind $Mod-Return spawn urxvt
-hc keybind $Mod-d spawn env PATH=/home/tobias/bin/:$PATH dmenu_run -p 'Run:' -l 10 -nb '#222222' -nf '#FF0066' -fn 'snap' -sb '#222222' -sf '#85A3C2'
+#hc keybind $Mod-d spawn env PATH=/home/tobias/bin/:$PATH dmenu_run -p 'Run:' -l 10 -nb '#222222' -nf '#FF0066' -fn 'snap' -sb '#222222' -sf '#85A3C2'
+hc keybind $Mod-d spawn env PATH=/home/tobias/bin/:$PATH rofi -show run -font "snap 8" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
+hc keybind $Mod-Shift-s spawn rofi -show ssh -font "snap 8" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
 hc keybind $Super+w spawn firefox
 hc keybind $Super+s spawn python2 $HOME/projects/soundrecog/recon.py
 hc keybind $Super-Shift-l spawn i3lock -c 000000 -i /home/tobias/Dropbox/Dirac/DiracLogoOld.png

@@ -39,6 +39,13 @@ function configure_herbstluftwm() {
 	mkdir -p $HOME/.config/herbstluftwm/
 	cp wm/herbstluftwm/* $HOME/.config/herbstluftwm/
 }
+function configure_rofi() {
+	pacman -Qi rofi &> /dev/null
+	if [[ ! $? -eq 0 ]]; then
+		echo "* Installing Rofi"
+		sudo pacman -Syy rofi
+	fi
+}
 function configure_vim() {
 	pacman -Qi vim-runtime &> /dev/null
 	if [[ ! $? -eq 0 ]]; then
