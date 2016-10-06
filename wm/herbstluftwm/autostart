@@ -23,7 +23,7 @@ hc keybind $Mod-Return spawn urxvt
 hc keybind $Mod-d spawn env PATH=/home/tobias/bin/:$PATH rofi -show run
 hc keybind $Super+w spawn chromium
 hc keybind $Super-Shift-l spawn i3lock -c 000000 $I3LOCK_SETTINGS 
-hc keybind $Super-m spawn amixer set Master toggle && notify-dark "Mute/Unmute"
+hc keybind $Super-m spawn amixer set Master toggle
 
 # tags
 TAG_NAMES=( {1..9} )
