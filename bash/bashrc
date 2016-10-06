@@ -27,19 +27,7 @@ alias grep='grep --color=auto -n'
 alias ls='ls -hF --color=auto'
 alias feh='feh -Z -F'
 alias bc='bc -l'
-alias gdb='gdb -q'
-alias rsync='rsync --progress'
 alias watch='watch -c'
 alias tree='tree -C'
-
-function switchMuteUnmute {
-	amixer set Master toggle &> /dev/null
-	if [[ $(amixer get Master | grep '\[on\'] | wc -l) -gt 0 ]]; then
-		notify-send Alsamixer "Master: Unmute"
-	else
-		notify-send Alsamixer "Master: Mute"
-	fi
-}
-
 
 export EDITOR="vim"
