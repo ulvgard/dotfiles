@@ -1,12 +1,9 @@
-URxvt*transparent: true
-URxvt*shading: 15
-
 URxvt*internalBorder: 0
 URxvt.intensityStyles: false
 URxvt*font: xft:Envy Code R:pixelsize=13:antialias=true
 URxvt.boldFont: xft:Envy Code R:pixelsize=13:antialias=true
 URxvt.italicFont: xft:Envy Code R:pixelsize=13:Italic:antialias=true
-URxvt.urlLauncher: firefox
+URxvt.urlLauncher: chromium
 URxvt*scrollBar_right: false
 URxvt*scrollBar: false
 URxvt*cursorColor: #00FF00
@@ -53,8 +50,6 @@ URxvt*foreground: #f1f1f1
 
 URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true                                               
-dzen2.foreground: #ffffff
-dzen2.background: #000000
 
 # moving the cursor between words (xterm style)
 URxvt.keysym.Control-Up: \033[1;5A
