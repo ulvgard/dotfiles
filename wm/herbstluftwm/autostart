@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this is a simple config for herbstluftwm
+source "$(pwd)/dirac_settings.sh"
 
 function hc() {
     herbstclient "$@"
@@ -11,11 +11,6 @@ hc emit_hook reload
 # remove all existing keybindings
 hc keyunbind --all
 
-if xrandr | grep -q "DP1-1 connected" 
-then
-	hc set_monitors 1920x1200+0+0 1920x1200+1920+0
-fi
-
 # keybindings
 Mod=Mod1
 hc keybind $Mod-Shift-q quit
@@ -24,15 +19,11 @@ hc keybind $Mod-Shift-c close
 
 # applications
 Super=Mod4
-hc keybind $Mod-Shift-Return spawn urxvt -e fish
 hc keybind $Mod-Return spawn urxvt
-hc keybind $Mod-d spawn env PATH=/home/tobias/bin/:$PATH dmenu_run -p 'Run:' -l 10 -nb '#222222' -nf '#FF0066' -fn 'snap' -sb '#222222' -sf '#85A3C2'
-hc keybind $Super+w spawn firefox
-hc keybind $Super+s spawn python2 $HOME/projects/soundrecog/recon.py
-hc keybind $Super-Shift-l spawn i3lock -c 000000 -i /home/tobias/Dropbox/Dirac/DiracLogoOld.png
+hc keybind $Mod-d spawn env PATH=/home/tobias/bin/:$PATH rofi -show run
+hc keybind $Super+w spawn chromium
+hc keybind $Super-Shift-l spawn i3lock -c 000000 $I3LOCK_SETTINGS 
 hc keybind $Super-m spawn amixer set Master toggle && notify-dark "Mute/Unmute"
-
-
 
 # tags
 TAG_NAMES=( {1..9} )
@@ -137,14 +128,11 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc detect_monitors
 $HOME/.config/monitor_setup.sh
 
-# find the panel
-panel="/home/tobias/.config/herbstluftwm/panel.sh"
-[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    $panel $monitor &
-done
 
-trayer --edge top --align right --widthtype request --heighttype pixels --height 10 --transparent true --alpha 128 --margin -100 &
-
-/usr/bin/dropboxd
+# find the panel. Uncomment to enable a panel
+#panel="/home/tobias/.config/herbstluftwm/panel.sh"
+#[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
+#for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
+#    # start it on each monitor
+#    $panel $monitor &
+#done
