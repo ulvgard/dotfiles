@@ -1,8 +1,8 @@
 URxvt*internalBorder: 0
 URxvt.intensityStyles: false
-URxvt*font: xft:Envy Code R:pixelsize=13:antialias=true
-URxvt.boldFont: xft:Envy Code R:pixelsize=13:antialias=true
-URxvt.italicFont: xft:Envy Code R:pixelsize=13:Italic:antialias=true
+URxvt*font: xft:Envy Code R:pixelsize=15:antialias=true
+URxvt.boldFont: xft:Envy Code R:pixelsize=15:antialias=true
+URxvt.italicFont: xft:Envy Code R:pixelsize=15:Italic:antialias=true
 URxvt.urlLauncher: chromium
 URxvt*scrollBar_right: false
 URxvt*scrollBar: false
@@ -10,6 +10,8 @@ URxvt*cursorColor: #00FF00
 URxvt*dpi: 140
 URxvt.foreground: #ffffff
 URxvt.background: #000000
+
+URxvt*saveLines: 12000
 
 Xft.antialias:  true
 Xft.rgba:       rgb
@@ -19,6 +21,7 @@ Xft.dpi:        96
 URxvt.colorIT:      #87af5f
 URxvt.colorBD:      #d7d7d7
 URxvt.colorUL:      #87afd7
+
 
 ! Colors ---------------------------------
 ! Black
@@ -51,9 +54,13 @@ URxvt*foreground: #f1f1f1
 URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true                                               
 
-# moving the cursor between words (xterm style)
-URxvt.keysym.Control-Up: \033[1;5A
-URxvt.keysym.Control-Down: \033[1;5B
+! moving the cursor between words (xterm style)
 URxvt.keysym.Control-Left: \033[1;5D
 URxvt.keysym.Control-Right: \033[1;5C
 
+! Resize font plugin
+URxvt.perl-ext-common:  font-size
+
+! disable Ctrl+Shift defaults
+URxvt.iso14755: false
+URxvt.iso14755_52: false
