@@ -1,39 +1,12 @@
 #!/bin/sh
-xset +fp /usr/share/fonts/artwiz-fonts
-xset fp rehash
 
 setxkbmap -layout "us,se" -option "grp: caps_toggle"
 setxkbmap -device 14 -layout "us,se" -option "grp: caps_toggle"
 
+DEFAULTSESSION=herbstluftwm
 
-
-if xrandr | grep -q "DP1 connected"
-then
-
-	xrandr --output LVDS1 --off
-	sleep 1
-	xrandr --output DP1 --auto
-
-#	if xrandr | grep -q "VGA1 connected"
-#	then
-#		xrandr --output VGA1 --auto --left-of DP1
-#		xrandr --output DP1 --primary --auto
-#	else
-#		xrandr --output DP1 --auto
-#	fi
-#else
-#	if xrandr | grep -q "VGA1 connected"
-#	then
-#		xrandr --output LVDS1 --off
-#	fi
-fi
+case "$1" in
+	*) exec $DEFAULTSESSION ;;
+esac
 
 xset -dpms; xset s off 
-exec herbstluftwm
-
-#sxhkd &
-
-#export BSPWM_FIFO="$HOME/.config/bspwm/bspwm.fifo"
-#[ -e "$BSPWM_FIFO" ] && rm "$BSPWM_FIFO"
-#mkfifo "$BSPWM_FIFO"
-#exec bspwm -s "$BSPWM_FIFO"
