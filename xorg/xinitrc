@@ -1,4 +1,5 @@
 #!/bin/sh
+synclient TouchpadOff=1
 
 setxkbmap -layout "us,se" -option "grp: caps_toggle"
 setxkbmap -device 14 -layout "us,se" -option "grp: caps_toggle"
